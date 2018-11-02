@@ -1,5 +1,8 @@
 # lomkolo.pl
 
+Strona dla Laboratorium Oceny Mleka w Kole Spółka z o.o.
+Podstawa wersja zrobiona na obraz i podobieństwo :) starej strony
+
 ## Project setup
 ```
 yarn install
