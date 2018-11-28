@@ -17,15 +17,17 @@
         <div>Jacek Ziółkowski </div>
         </strong>
     </div>
-    <span class="side">
-        <img class="image" src="../images/logo.png" />
-    </span>
+    <div class="shadow"></div>
+    <img class="logo" src="../images/logo.png" />
 </div>
 </template>
 
 <script>
 export default {
   name: 'Contact',
+  beforeCreate() {
+    document.body.className = 'contact';
+  },
 };
 </script>
 
@@ -33,46 +35,51 @@ export default {
 .flex{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .content-text{
-  color: black;
-  font-size: 1.1vmax;
+  color: white;
+  font-size: 1.5vmax;
+  font-weight: bolder;
   text-align: center;
   line-height: 1.2;
   margin-left: 4vw;
   margin-right: 4vw;
   flex: 3;
+  z-index: 2;
+}
+
+.shadow{
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    border: 2px solid, red;
+    z-index: 1;
 }
 
 .content-text a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .content-text a:hover {
     color: red;
 }
 
-.side{
-    padding: 0;
-    margin: 2vw;
-    min-width: 30%;
-    vertical-align: middle;
-    flex: 1;
-  }
 
-.image {
-  display: block;
-  max-width: 70%;
-  max-height: 100%;
-  margin: auto;
-}
-
-.address{
-  text-align: center;
-  font-size: 0.7vmax;
-  color: grey;
+.logo{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    display: block;
+    margin: auto;
+    width: 8%;
+    height: auto;
+    z-index: 2;
 }
 
 @media (min-width: 800px) {

@@ -1,7 +1,8 @@
 <template>
 <div class="container">
-  <div class="item header"><h2>Laboratorium Oceny Mleka w Kole Spółka z o.o.</h2></div>
-  <!-- <div class="item logo"></div> -->
+  <div class="item header">
+    <h2>Laboratorium Oceny Mleka w Kole Spółka z O.O.</h2>
+  </div>
   <div class="item nav">
     <div class="nav">
       <router-link to="/"><span class="navitem">Strona główna</span></router-link>
@@ -18,11 +19,13 @@
     </div>
   </div>
   <div class="item footer">Copyright © 2018 Laboratorium Oceny
-     Mleka w Kole Spółka z o.o. & Mercucio</div>
+     Mleka w Kole Spółka z o.o. & Mercucio
+  </div>
 </div>
 </template>
 
 <script>
+import VueGallery from 'vue-gallery';
 import Home from './components/Home.vue';
 import About from './components/About.vue';
 import Offer from './components/Offer.vue';
@@ -39,6 +42,7 @@ export default {
     PriceList,
     Contact,
     Gallery,
+    VueGallery,
   },
 };
 </script>
@@ -51,6 +55,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
+  /* background-color: black;
+  opacity: 0.8; */
 }
 
 :root{
@@ -65,8 +71,47 @@ export default {
 
 body{
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1vmax;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+    font-size: 1.3vmax;
+    font-weight: bold;
+}
+
+body.home {
+    background-image: url('images/home-background-2.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+body.about {
+    background-image: url('images/about-background-2.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+body.offer {
+    background-image: url('images/offer-background.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+body.price {
+    background-image: url('images/pricelist-background.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+body.gallery {
+    background-image: url('images/contact-background.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+body.contact {
+    background-image: url('images/gallery-background-2.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
 }
 
 .container {
@@ -80,7 +125,7 @@ body{
   "content content"
   "footer footer";
   height: 100vh;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #444;
   justify-content: center;
   justify-items: stretch;
@@ -89,7 +134,7 @@ body{
 }
 
 .item{
-  background-color: white;
+  /* background-color: white; */
   color: #fff;
   padding: 5px;
   margin-bottom: 5px;
@@ -101,29 +146,30 @@ body{
 }
 
 .header{
-    grid-area: header;
-    padding-bottom: 0;
+  text-align: left;
+  grid-area: header;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 5%;
 }
 
 .footer{
-    grid-area: footer;
-    font-size: 0.8vw;
-}
-
-/* .logo{
-  grid-area: logo;
+  grid-area: footer;
+  font-size: 0.8vw;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  background-color: #444;
-  height: 100%;
-} */
+  margin-bottom: 0;
+}
 
 .nav{
   grid-area: nav;
   display: inline;
   text-align: right;
-  background-color: #444;
+  /* background-color: #444; */
   padding-right: 10%;
 }
 
@@ -136,7 +182,7 @@ body{
 }
 
 .navitem{
-  border-bottom: 0.2vh solid #444;
+  /* border-bottom: 0.2vh solid #444; */
 }
 
 .navitem:hover{
@@ -144,20 +190,11 @@ body{
   cursor: pointer;
 }
 
-.header,
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #999;
-  margin-bottom: 0;
-}
-
 .router-link-exact-active > span{
   text-decoration: none !important;
   text-align: right;
   color: white;
-  border-bottom: 0.2vh solid white;
+  border-bottom: 0.2vh solid transparent;
 }
 
 @media (max-width: 1078px) {

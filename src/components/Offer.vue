@@ -23,23 +23,17 @@
                  poszczególnych dostawców.
         </p>
     </div>
-    <span class="side">
-        <img class="image" src="../images/0099.jpg" />
-        <p class="address">
-        Laboratorium Oceny Mleka w Kole Spółka z o.o.<br>
-        Ul. Składowa 7<br>
-        62-600 Koło<br>
-        tel. (0-63) 26-16-411<br>
-        fax: (0-63) 26 16 094<br>
-        e-mail: lab@lomkolo.pl
-        </p>
-    </span>
+    <div class="shadow"></div>
+    <img class="logo" src="../images/logo.png" />
 </div>
 </template>
 
 <script>
 export default {
   name: 'Offer',
+  beforeCreate() {
+    document.body.className = 'offer';
+  },
 };
 </script>
 
@@ -49,17 +43,31 @@ export default {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    position: relative;
 }
 
 .content-text{
-  color: black;
-  font-size: 1.1vmax;
+  color: white;
+  font-size: 1.3vmax;
+  font-weight: bolder;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.2;
   margin-left: 4vw;
   margin-right: 4vw;
   flex: 3;
+  z-index: 2;
+}
+
+.shadow{
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    border: 2px solid, red;
+    z-index: 1;
 }
 
 .side{
@@ -75,6 +83,17 @@ export default {
   max-width: 50%;
   max-height: 100%;
   margin: auto;
+}
+
+.logo{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    display: block;
+    margin: auto;
+    width: 8%;
+    height: auto;
+    z-index: 2;
 }
 
 .address{
