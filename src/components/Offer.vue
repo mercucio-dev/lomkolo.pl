@@ -66,7 +66,6 @@ export default {
     width: 100%;
     height: 100%;
     top: 0px;
-    border: 2px solid, red;
     z-index: 1;
 }
 
